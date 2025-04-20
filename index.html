@@ -1,72 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Table and Forms</title>
-    <link rel="stylesheet" href="Table.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Table and Forms</title>
+  <!-- Both CSS files are included so that existing styling remains unchanged -->
+  <link rel="stylesheet" href="Table.css">
+  <link rel="stylesheet" href="Form.css">
 </head>
 <body>
-    <table>
-        <caption>Invoice Tabular data</caption>
+  <!-- Invoice Table (unchanged) -->
+  <table>
+    <caption>Invoice Tabular data</caption>
+    <tr>
+      <th colspan="3">Invoice #123456789</th>
+      <th style="text-align: right;" colspan="1">14 January 2025</th>
+    </tr>
+    <tr class="address-section address-Header">
+      <td colspan="2" style="border-bottom: none;"><b>Pay to:</b></td>
+      <td colspan="2" style="border-bottom: none;"><b>Customer:</b></td>
+    </tr>
+    <tr class="address-section address-Line">
+      <td colspan="2" style="border-top: none; border-bottom: none;">Acme Billing Co.</td>
+      <td colspan="2" style="border-top: none; border-bottom: none;">John Smith</td>
+    </tr>
+    <tr class="address-section address-Line">
+      <td colspan="2" style="border-top: none; border-bottom: none;">123 Main St.</td>
+      <td colspan="2" style="border-top: none; border-bottom: none;">321 Willow Way</td>
+    </tr>
+    <tr class="address-section address-Line">
+      <td colspan="2" style="border-top: none;">Cityville, NA 12345</td>
+      <td colspan="2" style="border-top: none;">Southeast Northwestshire, MA 54321</td>
+    </tr>
+    <tr>
+      <th>Name / Description</th>
+      <th>Qty.</th>
+      <th style="text-align:center;">@</th>
+      <th style="text-align:right;">Cost</th>
+    </tr>
+    <tr class="item1-row">
+      <td>Paperclips</td>
+      <td>1000</td>
+      <td style="text-align:center;">0.01</td>
+      <td style="text-align:right;">10.00</td>
+    </tr>
+    <tr class="item2-row">
+      <td>Staples (box)</td>
+      <td>100</td>
+      <td style="text-align:center;">1.00</td>
+      <td style="text-align:right;">100.00</td>
+    </tr>
+    <tr class="item1-row">
+      <td>Bond Paper (box)</td>
+      <td>100</td>
+      <td style="text-align:center;">1.00</td>
+      <td style="text-align:right;">110.00</td>
+    </tr>
+    <tr class="subtotal-row">
+      <td colspan="3"><b>Subtotal</b></td>
+      <td style="text-align:right;">110.00</td>
+    </tr>
+    <tr class="tax-row">
+      <td colspan="2"><b>Tax</b></td>
+      <td colspan="1">8%</td>
+      <td style="text-align:right;">8.80</td>
+    </tr>
+    <tr class="total-row">
+      <td colspan="3">Grand Total</td>
+      <td style="text-align:right;">$ 118.80</td>
+    </tr>
+  </table>
+
+  <!-- Form Section (unchanged from your second HTML page) -->
+  <table>
+    <form>
+      <thead>
         <tr>
-            <th colspan="3">Invoice #123456789</th>
-            <th style="text-align: right;" colspan="1">14 January 2025</th>
+          <th>Name</th>
+          <th>Value</th>
         </tr>
-        <tr class="address-section address-Header">
-            <td colspan="2" style="border-bottom: none;"><b>Pay to:</b></td>
-            <td colspan="2" style="border-bottom: none;"><b>Customer:</b></td>
-        </tr>
-        <tr class="address-section address-Line">
-            <td colspan="2" style="border-top: none; border-bottom: none;">Acme Billing Co.</td>
-            <td colspan="2" style="border-top: none; border-bottom: none;">John Smith</td>
-        </tr>
-        <tr class="address-section address-Line">
-            <td colspan="2" style="border-top: none; border-bottom: none;">123 Main St.</td>
-            <td colspan="2" style="border-top: none; border-bottom: none;">321 Willow Way</td>
-        </tr>
-        <tr class="address-section address-Line">
-            <td colspan="2" style="border-top: none;">Cityville, NA 12345</td>
-            <td colspan="2" style="border-top: none;">Southeast Northwestshire, MA 54321</td>
+      </thead>
+      <tbody>
+        <tr>
+          <td><label for="name">Name:</label></td>
+          <td><input type="text" name="name" size="30" placeholder="Type your name here" maxlength="50" autofocus required></td>
         </tr>
         <tr>
-            <th>Name / Description</th>
-            <th>Qty.</th>
-            <th style="text-align:center;">@</th>
-            <th style="text-align:right;">Cost</th>
+          <td><label for="sex">Sex:</label></td>
+          <td>
+            <input type="radio" id="male" name="gender" value="male" CHECKED>
+            <label for="male">Male</label><br>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label><br>
+            <input type="radio" id="other" name="gender" value="other">
+            <label for="other">Other</label>
+          </td>
         </tr>
-        <tr class="item1-row">
-            <td>Paperclips</td>
-            <td>1000</td>
-            <td style="text-align:center;">0.01</td>
-            <td style="text-align:right;">10.00</td>
+        <tr>
+          <td><label for="eyeColor">Eye Color</label></td>
+          <td>
+            <select name="eyeColor" id="eyeColor" size="1">
+              <option value="green">green</option>
+              <option value="blue">blue</option>
+              <option value="brown">brown</option>
+              <option value="black" SELECTED>black</option>
+            </select>
+          </td>
         </tr>
-        <tr class="item2-row">
-            <td>Staples (box)</td>
-            <td>100</td>
-            <td style="text-align:center;">1.00</td>
-            <td style="text-align:right;">100.00</td>
+        <tr>
+          <td><label for="checkAll">Check all the Applies</label></td>
+          <td>
+            <input type="checkbox" id="feature1" name="feature1" value="6ft.">
+            <label for="feature1">Over 6ft. Tall</label><br>
+            <input type="checkbox" id="feature2" name="feature2" value="200lbs.">
+            <label for="feature2">Over 200 pounds</label><br>
+            <input type="checkbox" id="feature3" name="feature3" value="less than 200lbs.">
+            <label for="feature3">Less than 200 pounds</label>
+          </td>
         </tr>
-        <tr class="item1-row">
-            <td>Bond Paper (box)</td>
-            <td>100</td>
-            <td style="text-align:center;">1.00</td>
-            <td style="text-align:right;">110.00</td>
+        <tr>
+          <td><label for="ability">Describe your athletic ability</label></td>
+          <td>
+            <textarea rows="10" cols="30"></textarea>
+          </td>
         </tr>
-        <tr class="subtotal-row">
-            <td colspan="3"><b>Subtotal</b></td>
-            <td style="text-align:right;">110.00</td>
+      </tbody>
+      <tfoot>
+        <tr>
+          <th colspan="2"><input type="submit" id="btn1" value="Enter my Information"></th>
         </tr>
-        <tr class="tax-row">
-            <td colspan="2"><b>Tax</b></td>
-            <td colspan="1">8%</td>
-            <td style="text-align:right;">8.80</td>
-        </tr>
-        <tr class="total-row">
-            <td colspan="3">Grand Total</td>
-            <td style="text-align:right;">$ 118.80</td>
-        </tr>
-    </table>
-    <iframe src="index .html" title="Information Form" scrolling="no"></iframe>
+      </tfoot>
+    </form>
+  </table>
+  
+  <!-- Note: The original iframe from the invoice page has been removed 
+       because the form content has been directly merged here. -->
 </body>
 </html>
